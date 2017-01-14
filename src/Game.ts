@@ -5,7 +5,10 @@ import Human from './Human';
 import Computer from './Computer';
 
 export default class Game {
-  private playerList: Array<Player>;
+  /** Список игроков */
+  public playerList: Array<Player>;
+  /** Номер игрока кто ходит */
+  private playerStepId: number = 0;
 
   /**
    * Creates an instance of Game.
@@ -17,7 +20,11 @@ export default class Game {
    *
    * @memberOf Game
    */
-  constructor(public type : string, public mapSize : number, public countryCount : number, public playerCount : number) {
+  constructor(
+    public type : string,
+    public mapSize : number,
+    public countryCount : number,
+    public playerCount : number) {
 
     this.playerList = [];
 
@@ -35,7 +42,7 @@ export default class Game {
   }
   private addHumanPlayers() {
     Array(this.playerCount)
-      .map(i => new Human)
+      .map(i => new Human('name', constants.COUNTRY_LIST_NAME[0]))
       .forEach(i => this.playerList.push(i));
   }
 
@@ -44,10 +51,10 @@ export default class Game {
   }
 
   selectCountry(country, playerName) {
-    if (!constants.COUNTRY_LIST_NAME.include(country)) {
-      new Error('Country name is not valid');
+    if (constants.COUNTRY_LIST_NAME.indexOf(country) === -1) {
+      return new Error('Country name is not valid');
     }
   }
 }
 
-export const difficultLevel = (level = constants.GAME_COUNTRY_COUNT_MIN) => (level/constants.GAME_COUNTRY_COUNT_MIN) * 100;
+export const difficultLevel = (countryCount = constants.GAME_COUNTRY_COUNT_MIN) => (countryCount/constants.GAME_COUNTRY_COUNT_MIN) / 10;

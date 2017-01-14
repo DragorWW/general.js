@@ -1,0 +1,6 @@
+instrumentation:
+  extensions:
+    - .js
+    - .ts
+  include-all-sources: true
+  es-modules: true

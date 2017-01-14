@@ -1,4 +1,5 @@
 import GameEconomic from './GameEconomic';
+import {Country} from './const';
 
 /**
  * Базовый класс работы игрока
@@ -6,11 +7,13 @@ import GameEconomic from './GameEconomic';
  * @export
  * @class Player
  */
-export default abstract class Player {
+abstract class Player {
   gameEconomic: GameEconomic;
 
-  protected constructor (readonly name, readonly country) {
+  protected constructor (readonly name : string, readonly country : Country) {
 
-    this.gameEconomic = new GameEconomic();
+    this.gameEconomic = new GameEconomic(500);
   }
 }
+
+export default Player;

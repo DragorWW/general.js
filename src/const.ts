@@ -9,6 +9,28 @@ export const GAME_BOARD_SIZE_MAX = 100;
 export const GAME_COUNTRY_COUNT_MIN = 2;
 export const GAME_COUNTRY_COUNT_MAX = 20;
 
+export type Country =
+  'Russia' |
+  'Germany' |
+  'Franche' |
+  'USA' |
+  'India' |
+  'Australia' |
+  'England' |
+  'Chaina' |
+  'Pakistan' |
+  'Iraq' |
+  'Brazil' |
+  'Argenthina' |
+  'Viethnam' |
+  'Poland' |
+  'Italy' |
+  'Spain' |
+  'Japan' |
+  'Canada' |
+  'Mexico' |
+  'Turkey';
+
 export const COUNTRY_LIST = {
   'Russia': 'ff2500',
   'Germany': '001793',
@@ -31,4 +53,25 @@ export const COUNTRY_LIST = {
   'Mexico': 'fffed2',
   'Turkey': '521b92',
 };
-export const COUNTRY_LIST_NAME = Object.keys(COUNTRY_LIST);
+export const COUNTRY_LIST_NAME: Country[] = [
+  'Russia',
+  'Germany',
+  'Franche',
+  'USA',
+  'India',
+  'Australia',
+  'England',
+  'Chaina',
+  'Pakistan',
+  'Iraq',
+  'Brazil',
+  'Argenthina',
+  'Viethnam',
+  'Poland',
+  'Italy',
+  'Spain',
+  'Japan',
+  'Canada',
+  'Mexico',
+  'Turkey'
+];

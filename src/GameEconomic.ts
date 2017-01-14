@@ -1,70 +1,117 @@
 export default class GameEconomic {
+  /**
+   * Размер территории
+   */
   territorySize: number;
 
   /**
-   * Количесво зерна
+   * Колличесво зерна
    */
   private cornCount: number;
   /**
-   * Количесво ученых
+   * Колличесво ученых
    */
   private scientistCount: number;
+  /**
+   * Колличесво солдат
+   */
   private soildersCount: number;
-  private population: number;
+  /**
+   * Колличесво населения
+   */
+  private populationCount: number;
+  /**
+   * Колличесво крестьян
+   */
+  private peasantCount: number;
+  /**
+   * Колличесво денег
+   */
+  private moneyCount: number;
 
-  constructor () {
+  constructor(territorySize : number) {
+    this.territorySize = territorySize;
 
   }
 
-  set corn (corn : number) {
+  set corn(corn: number) {
     this.cornCount = corn;
   }
-  get corn () : number {
+  get corn(): number {
     return this.cornCount;
   }
 
-  saleCorn (corn) {}
+  get population() {
+    return this.populationCount;
+  }
 
-  bayCorn (corn) {}
+  get maxPopulation(): number {
+    return this.territorySize;
+  }
 
-  trainScientist (scientist) {}
-
-  dismissionScientist (scientist) {}
-
-  trainSoldiers (soldiers) {}
-
-  dismissionSoldiers (soldiers) {}
-
+  get peasant(): number {
+    return this.populationCount;
+  }
+  get soldiers(): number {
+    return 0;
+  }
+  get scientist(): number {
+    return 0;
+  }
+  get money(): number {
+    return 0;
+  }
   /**
    * Прирост зерна.
-   * @type {number}
    */
-  get incrementCron () {}
+  get incrementCron(): number {
+    return 0;
+  }
 
   /**
    * Прирост населения
-   * @type {number}
    */
-  get incrementPopulation () {
+  get incrementPopulation(): number {
+    return 0;
   }
 
   /**
    * Расходы на ученых
-   * @type {number}
    */
-  get chargesScientist () {}
+  get chargesScientist(): number {
+    return 0;
+  }
 
   /**
    * Расходы на армию
-   * @type {number}
    */
-  get chargesSoldiers () {}
+  get chargesSoldiers(): number {
+    return 0;
+  }
 
   /**
    * Баланс
-   * @type {number}
    */
-  get balance () {
+  get balance(): number {
+    return 0;
+  }
+
+  // actions
+  saleCorn(corn) {
 
   }
+  bayCorn(corn) {
+
+  }
+  sowCorn(corn) {
+
+  }
+
+  trainScientist(scientist) { }
+
+  dismissionScientist(scientist) { }
+
+  trainSoldiers(soldiers) { }
+
+  dismissionSoldiers(soldiers) { }
 }

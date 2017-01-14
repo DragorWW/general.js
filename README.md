@@ -2,8 +2,6 @@
 Port window of game [General](http://akasoft.genliga.ru/index_e.php)
 
 ## TODO
- - setup unit testing
- - webpack config
  - server
     - babel node run code
  - client
